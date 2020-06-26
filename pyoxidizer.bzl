@@ -3,8 +3,7 @@ def make_dist():
 
 def make_exe(dist):
     python_config = PythonInterpreterConfig(
-        run_module='pyox'
-        # run_module='pyox.__main__'
+        run_module='pyox.__main__'
     )
     exe = dist.to_python_executable(
         name="pyox",
@@ -14,10 +13,17 @@ def make_exe(dist):
         include_resources=False,
         include_test=False,
     )
-    # exe.add_in_memory_python_resources(dist.read_package_root(
-    #    path=".",
-    #    packages=["pyox"],
-    # ))
+    exe.add_in_memory_python_resources(dist.pip_install(["django==2.2"]))
+    for resource in dist.pip_install(["xlwings"]):
+        if type(resource) == "PythonExtensionModule":
+            exe.add_in_memory_extension_module(resource)
+        else:
+            exe.add_in_memory_python_resource(resource)
+    exe.add_in_memory_python_resources()
+    exe.add_in_memory_python_resources(dist.read_package_root(
+       path=".",
+       packages=["pyox"],
+    ))
     return exe
 
 def make_embedded_resources(exe):
