@@ -5,6 +5,6 @@ def main():
     f('123')
     f('asdf')
     return 0
-    
+
 if __name__ == '__main__':
     sys.exit(main())

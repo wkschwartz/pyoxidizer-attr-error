@@ -2,8 +2,11 @@ def make_dist():
     return default_python_distribution()
 
 def make_exe(dist):
-    python_config = PythonInterpreterConfig(run_module='pyox')
-    return dist.to_python_executable(
+    python_config = PythonInterpreterConfig(
+        run_module='pyox'
+        # run_module='pyox.__main__'
+    )
+    exe = dist.to_python_executable(
         name="pyox",
         config=python_config,
         extension_module_filter='all',
@@ -11,6 +14,11 @@ def make_exe(dist):
         include_resources=False,
         include_test=False,
     )
+    # exe.add_in_memory_python_resources(dist.read_package_root(
+    #    path=".",
+    #    packages=["pyox"],
+    # ))
+    return exe
 
 def make_embedded_resources(exe):
     return exe.to_embedded_resources()

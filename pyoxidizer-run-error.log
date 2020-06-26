@@ -1,0 +1,167 @@
+# NOTE: LIBPY=$TEMPDIR/libpython.Jo2AQtXtsNqx
+# NOTE: DISTPY_MODS=./build/python_distributions/python.f312bea46a7d/python/build/Modules
+➜  pyox git:(master) ✗ uname -a
+Darwin $(uname -n) 19.5.0 Darwin Kernel Version 19.5.0: Tue May 26 20:41:44 PDT 2020; root:xnu-6153.121.2~2/RELEASE_X86_64 x86_64
+➜  pyox git:(master) ✗ rustc --version
+rustc 1.44.1 (c7087fe00 2020-06-17)
+➜  pyox git:(master) ✗ cargo --version
+cargo 1.44.1 (88ba85757 2020-06-11)
+➜  pyox git:(master) ✗ clang --version
+Apple clang version 11.0.3 (clang-1103.0.32.62)
+Target: x86_64-apple-darwin19.5.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+➜  pyox git:(master) ✗ pyoxidizer run
+resolving 1 targets
+resolving target exe
+resolving target dist
+resolving Python distribution Url { url: "https://github.com/indygreg/python-build-standalone/releases/download/20200408/cpython-3.7.7-macos-20200409T0412.tar.zst", sha256: "f312bea46a7d8efecd4df6b22c03f83016775e6bb5944a5701d697e0a52c63b2" }
+Python distribution available at ./build/python_distributions/cpython-3.7.7-macos-20200409T0412.tar.zst
+reading data from Python distribution...
+Could not find platform dependent libraries <exec_prefix>
+Consider setting $PYTHONHOME to <prefix>[:<exec_prefix>]
+Could not find platform dependent libraries <exec_prefix>
+Consider setting $PYTHONHOME to <prefix>[:<exec_prefix>]
+     Created binary (application) package
+writing $TEMPDIR/pyoxidizer.GZ4KOFF67Oq9/pyox/.cargo/config
+writing $TEMPDIR/pyoxidizer.GZ4KOFF67Oq9/pyox/build.rs
+writing $TEMPDIR/pyoxidizer.GZ4KOFF67Oq9/pyox/src/main.rs
+writing $TEMPDIR/pyoxidizer.GZ4KOFF67Oq9/pyox/pyoxidizer.bzl
+warning: cProfile contains __file__
+warning: distutils.command.bdist_wininst contains __file__
+warning: distutils.command.sdist contains __file__
+warning: distutils.core contains __file__
+warning: distutils.dist contains __file__
+warning: doctest contains __file__
+warning: encodings contains __file__
+warning: idlelib.browser contains __file__
+warning: idlelib.config contains __file__
+warning: idlelib.help contains __file__
+warning: idlelib.help_about contains __file__
+warning: idlelib.idle contains __file__
+warning: idlelib.pyshell contains __file__
+warning: idlelib.runscript contains __file__
+warning: idlelib.tree contains __file__
+warning: importlib contains __file__
+warning: importlib._bootstrap contains __file__
+warning: importlib._bootstrap_external contains __file__
+warning: importlib.abc contains __file__
+warning: inspect contains __file__
+warning: lib2to3.pygram contains __file__
+warning: logging contains __file__
+warning: logging.handlers contains __file__
+warning: modulefinder contains __file__
+warning: multiprocessing.spawn contains __file__
+warning: pdb contains __file__
+warning: pip.__main__ contains __file__
+warning: pip._internal.build_env contains __file__
+warning: pip._internal.pyproject contains __file__
+warning: pip._internal.req.req_install contains __file__
+warning: pip._internal.utils.misc contains __file__
+warning: pip._internal.utils.setuptools_build contains __file__
+warning: pip._internal.utils.virtualenv contains __file__
+warning: pip._vendor contains __file__
+warning: pip._vendor.certifi.core contains __file__
+warning: pip._vendor.distlib.resources contains __file__
+warning: pip._vendor.pep517._in_process contains __file__
+warning: pip._vendor.pep517.wrappers contains __file__
+warning: pip._vendor.pkg_resources contains __file__
+warning: pkgutil contains __file__
+warning: profile contains __file__
+warning: pyclbr contains __file__
+warning: pydoc contains __file__
+warning: pydoc_data.topics contains __file__
+warning: runpy contains __file__
+warning: site contains __file__
+warning: trace contains __file__
+warning: turtle contains __file__
+warning: turtledemo.__main__ contains __file__
+warning: unittest contains __file__
+warning: unittest.loader contains __file__
+warning: venv contains __file__
+warning: warnings contains __file__
+__file__ was encountered in some embedded modules
+PyOxidizer does not set __file__ and this may create problems at run-time
+See https://github.com/indygreg/PyOxidizer/issues/69 for more
+Could not find platform dependent libraries <exec_prefix>
+Consider setting $PYTHONHOME to <prefix>[:<exec_prefix>]
+generating custom link library containing Python...
+deriving custom config.c from 96 extension modules
+compiling custom config.c to object file
+running: "cc" "-O0" "-ffunction-sections" "-fdata-sections" "-fPIC" "-m64" "-I" "$LIBPY" "-Wall" "-Wextra" "-std=c99" "-DNDEBUG" "-DPy_BUILD_CORE" "-o" "$TEMPDIR/pyoxidizer-build-exe.2shhVMfECgkl/config.o" "-c" "$LIBPY/config.c"
+exit code: 0
+running: "ar" "crs" "$TEMPDIR/pyoxidizer-build-exe.2shhVMfECgkl/libpyembeddedconfig.a" "$TEMPDIR/pyoxidizer-build-exe.2shhVMfECgkl/config.o"
+exit code: 0
+resolving inputs for custom Python library...
+ignoring config.o since it may conflict with our version
+resolving libraries required by core distribution...
+resolving inputs for 96 extension modules...
+static library bz2 required by _bz2
+system library dl required by _ctypes
+static library ffi required by _ctypes
+system library m required by _ctypes_test
+system library ncurses required by _curses
+static library db required by _dbm
+static library crypto required by _hashlib
+static library ssl required by _hashlib
+static library lzma required by _lzma
+framework CoreFoundation required by _scproxy
+framework SystemConfiguration required by _scproxy
+static library sqlite3 required by _sqlite3
+static library crypto required by _ssl
+static library ssl required by _ssl
+framework AppKit required by _tkinter
+framework ApplicationServices required by _tkinter
+framework Carbon required by _tkinter
+framework CoreGraphics required by _tkinter
+framework CoreServices required by _tkinter
+framework IOKit required by _tkinter
+framework Tcl required by _tkinter
+framework Tk required by _tkinter
+static library uuid required by _uuid
+static library z required by zlib
+compiling libpythonXY...
+running: "ar" "crs" "$TEMPDIR/pyoxidizer-build-exe.2shhVMfECgkl/libpythonXY.a" "$LIBPY/build/Modules/gcmodule.o" "$LIBPY/build/Modules/getbuildinfo.o" "$LIBPY/build/Modules/getpath.o" "$LIBPY/build/Modules/main.o" "$LIBPY/build/Objects/abstract.o" "$LIBPY/build/Objects/accu.o" "$LIBPY/build/Objects/boolobject.o" "$LIBPY/build/Objects/bytearrayobject.o" "$LIBPY/build/Objects/bytes_methods.o" "$LIBPY/build/Objects/bytesobject.o" "$LIBPY/build/Objects/call.o" "$LIBPY/build/Objects/capsule.o" "$LIBPY/build/Objects/cellobject.o" "$LIBPY/build/Objects/classobject.o" "$LIBPY/build/Objects/codeobject.o" "$LIBPY/build/Objects/complexobject.o" "$LIBPY/build/Objects/descrobject.o" "$LIBPY/build/Objects/dictobject.o" "$LIBPY/build/Objects/enumobject.o" "$LIBPY/build/Objects/exceptions.o" "$LIBPY/build/Objects/fileobject.o" "$LIBPY/build/Objects/floatobject.o" "$LIBPY/build/Objects/frameobject.o" "$LIBPY/build/Objects/funcobject.o" "$LIBPY/build/Objects/genobject.o" "$LIBPY/build/Objects/iterobject.o" "$LIBPY/build/Objects/listobject.o" "$LIBPY/build/Objects/longobject.o" "$LIBPY/build/Objects/memoryobject.o" "$LIBPY/build/Objects/methodobject.o" "$LIBPY/build/Objects/moduleobject.o" "$LIBPY/build/Objects/namespaceobject.o" "$LIBPY/build/Objects/object.o" "$LIBPY/build/Objects/obmalloc.o" "$LIBPY/build/Objects/odictobject.o" "$LIBPY/build/Objects/rangeobject.o" "$LIBPY/build/Objects/setobject.o" "$LIBPY/build/Objects/sliceobject.o" "$LIBPY/build/Objects/structseq.o" "$LIBPY/build/Objects/tupleobject.o" "$LIBPY/build/Objects/typeobject.o" "$LIBPY/build/Objects/unicodectype.o" "$LIBPY/build/Objects/unicodeobject.o" "$LIBPY/build/Objects/weakrefobject.o" "$LIBPY/build/Parser/acceler.o" "$LIBPY/build/Parser/bitset.o" "$LIBPY/build/Parser/firstsets.o" "$LIBPY/build/Parser/grammar.o" "$LIBPY/build/Parser/grammar1.o" "$LIBPY/build/Parser/listnode.o" "$LIBPY/build/Parser/metagrammar.o" "$LIBPY/build/Parser/myreadline.o" "$LIBPY/build/Parser/node.o" "$LIBPY/build/Parser/parser.o" "$LIBPY/build/Parser/parsetok.o" "$LIBPY/build/Parser/pgen.o" "$LIBPY/build/Parser/tokenizer.o" "$LIBPY/build/Python/Python-ast.o" "$LIBPY/build/Python/_warnings.o" "$LIBPY/build/Python/asdl.o" "$LIBPY/build/Python/ast.o" "$LIBPY/build/Python/ast_opt.o" "$LIBPY/build/Python/ast_unparse.o" "$LIBPY/build/Python/bltinmodule.o" "$LIBPY/build/Python/bootstrap_hash.o" "$LIBPY/build/Python/ceval.o" "$LIBPY/build/Python/codecs.o" "$LIBPY/build/Python/compile.o" "$LIBPY/build/Python/context.o" "$LIBPY/build/Python/dtoa.o" "$LIBPY/build/Python/dynamic_annotations.o" "$LIBPY/build/Python/dynload_shlib.o" "$LIBPY/build/Python/errors.o" "$LIBPY/build/Python/fileutils.o" "$LIBPY/build/Python/formatter_unicode.o" "$LIBPY/build/Python/frozen.o" "$LIBPY/build/Python/frozenmain.o" "$LIBPY/build/Python/future.o" "$LIBPY/build/Python/getargs.o" "$LIBPY/build/Python/getcompiler.o" "$LIBPY/build/Python/getcopyright.o" "$LIBPY/build/Python/getopt.o" "$LIBPY/build/Python/getplatform.o" "$LIBPY/build/Python/getversion.o" "$LIBPY/build/Python/graminit.o" "$LIBPY/build/Python/hamt.o" "$LIBPY/build/Python/import.o" "$LIBPY/build/Python/importdl.o" "$LIBPY/build/Python/marshal.o" "$LIBPY/build/Python/modsupport.o" "$LIBPY/build/Python/mysnprintf.o" "$LIBPY/build/Python/mystrtoul.o" "$LIBPY/build/Python/pathconfig.o" "$LIBPY/build/Python/peephole.o" "$LIBPY/build/Python/pyarena.o" "$LIBPY/build/Python/pyctype.o" "$LIBPY/build/Python/pyfpe.o" "$LIBPY/build/Python/pyhash.o" "$LIBPY/build/Python/pylifecycle.o" "$LIBPY/build/Python/pymath.o" "$LIBPY/build/Python/pystate.o" "$LIBPY/build/Python/pystrcmp.o" "$LIBPY/build/Python/pystrhex.o" "$LIBPY/build/Python/pystrtod.o" "$LIBPY/build/Python/pythonrun.o" "$LIBPY/build/Python/pytime.o" "$LIBPY/build/Python/structmember.o" "$LIBPY/build/Python/symtable.o" "$LIBPY/build/Python/sysmodule.o" "$LIBPY/build/Python/thread.o" "$LIBPY/build/Python/traceback.o" "$DISTPY_MODS/_abc.o" "$DISTPY_MODS/_asynciomodule.o" "$DISTPY_MODS/_bisectmodule.o" "$DISTPY_MODS/blake2b_impl.o" "$DISTPY_MODS/blake2module.o" "$DISTPY_MODS/blake2s_impl.o" "$DISTPY_MODS/_bz2module.o" "$DISTPY_MODS/_codecsmodule.o" "$DISTPY_MODS/_codecs_cn.o" "$DISTPY_MODS/_codecs_hk.o" "$DISTPY_MODS/_codecs_iso2022.o" "$DISTPY_MODS/_codecs_jp.o" "$DISTPY_MODS/_codecs_kr.o" "$DISTPY_MODS/_codecs_tw.o" "$DISTPY_MODS/_collectionsmodule.o" "$DISTPY_MODS/_contextvarsmodule.o" "$DISTPY_MODS/_cryptmodule.o" "$DISTPY_MODS/_csv.o" "$DISTPY_MODS/_ctypes.o" "$DISTPY_MODS/callbacks.o" "$DISTPY_MODS/callproc.o" "$DISTPY_MODS/cfield.o" "$DISTPY_MODS/dlfcn_simple.o" "$DISTPY_MODS/malloc_closure.o" "$DISTPY_MODS/stgdict.o" "$DISTPY_MODS/_ctypes_test.o" "$DISTPY_MODS/_cursesmodule.o" "$DISTPY_MODS/_datetimemodule.o" "$DISTPY_MODS/_dbmmodule.o" "$DISTPY_MODS/_decimal.o" "$DISTPY_MODS/basearith.o" "$DISTPY_MODS/constants.o" "$DISTPY_MODS/context.o" "$DISTPY_MODS/convolute.o" "$DISTPY_MODS/crt.o" "$DISTPY_MODS/difradix2.o" "$DISTPY_MODS/fnt.o" "$DISTPY_MODS/fourstep.o" "$DISTPY_MODS/io.o" "$DISTPY_MODS/memory.o" "$DISTPY_MODS/mpdecimal.o" "$DISTPY_MODS/numbertheory.o" "$DISTPY_MODS/sixstep.o" "$DISTPY_MODS/transpose.o" "$DISTPY_MODS/_elementtree.o" "$DISTPY_MODS/_functoolsmodule.o" "$DISTPY_MODS/_hashopenssl.o" "$DISTPY_MODS/_heapqmodule.o" "$DISTPY_MODS/_iomodule.o" "$DISTPY_MODS/bufferedio.o" "$DISTPY_MODS/bytesio.o" "$DISTPY_MODS/fileio.o" "$DISTPY_MODS/iobase.o" "$DISTPY_MODS/stringio.o" "$DISTPY_MODS/textio.o" "$DISTPY_MODS/_json.o" "$DISTPY_MODS/_localemodule.o" "$DISTPY_MODS/_lsprof.o" "$DISTPY_MODS/rotatingtree.o" "$DISTPY_MODS/_lzmamodule.o" "$DISTPY_MODS/md5module.o" "$DISTPY_MODS/multibytecodec.o" "$DISTPY_MODS/multiprocessing.o" "$DISTPY_MODS/semaphore.o" "$DISTPY_MODS/_opcode.o" "$DISTPY_MODS/_operator.o" "$DISTPY_MODS/_pickle.o" "$DISTPY_MODS/_posixsubprocess.o" "$DISTPY_MODS/_queuemodule.o" "$DISTPY_MODS/_randommodule.o" "$DISTPY_MODS/_scproxy.o" "$DISTPY_MODS/sha1module.o" "$DISTPY_MODS/sha256module.o" "$DISTPY_MODS/sha3module.o" "$DISTPY_MODS/sha512module.o" "$DISTPY_MODS/signalmodule.o" "$DISTPY_MODS/socketmodule.o" "$DISTPY_MODS/cache.o" "$DISTPY_MODS/connection.o" "$DISTPY_MODS/cursor.o" "$DISTPY_MODS/microprotocols.o" "$DISTPY_MODS/module.o" "$DISTPY_MODS/prepare_protocol.o" "$DISTPY_MODS/row.o" "$DISTPY_MODS/statement.o" "$DISTPY_MODS/util.o" "$DISTPY_MODS/_sre.o" "$DISTPY_MODS/_ssl.o" "$DISTPY_MODS/_stat.o" "$DISTPY_MODS/_struct.o" "$DISTPY_MODS/symtablemodule.o" "$DISTPY_MODS/_testbuffer.o" "$DISTPY_MODS/_testimportmultiple.o" "$DISTPY_MODS/_testmultiphase.o" "$DISTPY_MODS/_threadmodule.o" "$DISTPY_MODS/_tkinter.o" "$DISTPY_MODS/tkappinit.o" "$DISTPY_MODS/_tracemalloc.o" "$DISTPY_MODS/hashtable.o" "$DISTPY_MODS/_uuidmodule.o" "$DISTPY_MODS/_weakref.o" "$DISTPY_MODS/_xxtestfuzz.o" "$DISTPY_MODS/fuzzer.o" "$DISTPY_MODS/arraymodule.o" "$DISTPY_MODS/atexitmodule.o" "$DISTPY_MODS/audioop.o" "$DISTPY_MODS/binascii.o" "$DISTPY_MODS/_math.o" "$DISTPY_MODS/cmathmodule.o" "$DISTPY_MODS/errnomodule.o" "$DISTPY_MODS/faulthandler.o" "$DISTPY_MODS/fcntlmodule.o" "$DISTPY_MODS/grpmodule.o" "$DISTPY_MODS/itertoolsmodule.o" "$DISTPY_MODS/_math.o" "$DISTPY_MODS/mathmodule.o" "$DISTPY_MODS/mmapmodule.o" "$DISTPY_MODS/parsermodule.o" "$DISTPY_MODS/posixmodule.o" "$DISTPY_MODS/pwdmodule.o" "$DISTPY_MODS/pyexpat.o" "$DISTPY_MODS/xmlparse.o" "$DISTPY_MODS/xmlrole.o" "$DISTPY_MODS/xmltok.o" "$DISTPY_MODS/resource.o" "$DISTPY_MODS/selectmodule.o" "$DISTPY_MODS/syslogmodule.o" "$DISTPY_MODS/termios.o" "$DISTPY_MODS/timemodule.o" "$DISTPY_MODS/unicodedata.o" "$DISTPY_MODS/xxlimited.o" "$DISTPY_MODS/xxsubtype.o" "$DISTPY_MODS/zipimport.o" "$DISTPY_MODS/zlibmodule.o"
+cargo:warning=/Library/Developer/CommandLineTools/usr/bin/ranlib: file: $TEMPDIR/pyoxidizer-build-exe.2shhVMfECgkl/libpythonXY.a(dynamic_annotations.o) has no symbols
+cargo:warning=/Library/Developer/CommandLineTools/usr/bin/ranlib: file: $TEMPDIR/pyoxidizer-build-exe.2shhVMfECgkl/libpythonXY.a(pymath.o) has no symbols
+cargo:warning=/Library/Developer/CommandLineTools/usr/bin/ranlib: file: $TEMPDIR/pyoxidizer-build-exe.2shhVMfECgkl/libpythonXY.a(dlfcn_simple.o) has no symbols
+exit code: 0
+libpythonXY created
+deriving custom importlib modules to support in-memory importing
+building with Rust 1.44.1
+    Updating crates.io index
+   Compiling libc v0.2.71
+   Compiling memchr v2.3.3
+   Compiling lazy_static v1.4.0
+   Compiling regex-syntax v0.6.18
+   Compiling fs_extra v1.1.0
+   Compiling cc v1.0.55
+   Compiling cfg-if v0.1.10
+   Compiling getrandom v0.1.14
+   Compiling autocfg v1.0.0
+   Compiling byteorder v1.3.4
+   Compiling proc-macro-hack v0.5.16
+   Compiling ppv-lite86 v0.2.8
+   Compiling anyhow v1.0.31
+   Compiling pyembed v0.7.0
+   Compiling cpython v0.5.0
+   Compiling pyox v0.1.0 (/private/$TEMPDIR/pyoxidizer.GZ4KOFF67Oq9/pyox)
+   Compiling thread_local v1.0.1
+   Compiling num-traits v0.2.12
+   Compiling aho-corasick v0.7.13
+   Compiling python-packed-resources v0.1.0
+   Compiling rand_core v0.5.1
+   Compiling paste-impl v0.1.18
+   Compiling jemalloc-sys v0.3.2
+   Compiling rand_chacha v0.2.2
+   Compiling rand v0.7.3
+   Compiling paste v0.1.18
+   Compiling regex v1.3.9
+   Compiling uuid v0.8.1
+   Compiling python3-sys v0.5.0
+   Compiling jemallocator v0.3.2
+   Compiling jemallocator-global v0.3.2
+    Finished dev [unoptimized + debuginfo] target(s) in 36.77s
+writing executable to ./build/x86_64-apple-darwin/debug/exe/pyox
+AttributeError: 'NoneType' object has no attribute 'loader'
+error: cargo run failed
